@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-t" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ayush — Dev Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div id="particles" class="particles"></div>
+  </div>
+
+  <div id="globalLoader" class="global-loader" aria-hidden="true">
+    <div id="loaderInner" class="loader-inner"></div>
+    <div id="loaderLabel" class="loader-label">Loading...</div>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div id="logo" class="logo" tabindex="0" aria-label="Go to Home">
+      <div class="mark">AY</div>
+      <div class="brand">
+        <div class="name">AYUSH SINGH</div>
+        <div class="role">MERN STACK DEVELOPER</div>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button id="menuToggleBtn" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div id="navLinks" class="nav-links" role="menubar" aria-label="Main links">
+        <button data-target="home" class="nav-btn">Home</button>
+        <button data-target="projects" class="nav-btn">Projects</button>
+        <button data-target="internship" class="nav-btn">Internship</button>
+        <button data-target="education" class="nav-btn">Education</button>
+        <button data-target="contact" class="nav-btn">Contact</button>
+      </div>
+
+      <div id="navIndicator" class="nav-indicator" aria-hidden="true"></div>
+    </div>
+  </nav>
+
+  <main id="root" class="root">
+    <section id="home" class="page page-home" data-page="home">
+      <div class="container">
+        <div class="left">
+          <div class="hero-card">
+            <img id="heroImg" class="ripple-img" src="person.png" alt="Ayush portrait">
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="eyebrow">Hi, I am</div>
+          <h1 class="hero-title">Ayush SINGH <span class="accent">— </span><span id="typewriter-text" class="accent"></span></h1>
+          <p class="hero-desc">I build fast, accessible, backend projects. Micro-interactions and clean code are my jam.</p>
+
+          <div class="cta">
+            <button id="openProjects" class="btn primary">See Projects</button>
+            <a href="AyushSinghAug9008.pdf" download class="btn outline">Download CV</a>
+            <button id="openIntern" class="btn outline">Internship</button>
+            <button id="openEdu" class="btn outline">Education</button>
+          </div>
+
+          <div class="socials">
+            <a class="social" href="https://github.com/SinghCod3r/" target="_blank" rel="noopener">
+              <img class="ripple-img2" src="icons8-github-50.png" alt="GH">
+            </a>
+            <a class="social" href="https://linkedin.com/SinghCod3r/" target="_blank" rel="noopener">
+              <img class="ripple-img2"  src="icons8-linkedin-50.png" alt="IN">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+   <div id="overlayProjects" class="overlay" aria-hidden="true">
+  <div class="panel">
+    <button class="close" data-close="projects">Close ✕</button>
+    <h2>Projects</h2>
+    <p class="muted">Checkout My Works with Thier Source Code.</p>
+
+    <div class="carousel-container">
+      <div id="projectCarousel" class="carousel-wrapper">
+        <article class="project-card">
+          <div class="ripple-img2">
+            <img class="ripple-img2" src="1.png" alt="Project - Online Certificate Generator Site">
+          </div>
+          <div class="project-body">
+            <h3>Online Certificate Generator Site <a href="https://online-certificate-generator-etun.onrender.com/">{ Link }</a></h3>
+            <p class="muted">Skills Used - React · Animations</p>
+           
+            <p>This is Created Using Simple ReactJS. It is Used to Generate Online Certificate and Let you download in Image Form or Pdf Formate.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="ripple-img2">
+            <img class="ripple-img2" src="xyz.png" alt="Project - MoodBite AI ">
+          </div>
+          <div class="project-body">
+            <h3>MoodBite AI <a href="https://mood-bite-version-2-0.vercel.app/">{ Link }</a></h3>
+            <p class="muted">Skills Used - NextJs · SupaBase · Vercel · LLM · Gen AI </p>
+            <p>It is Our Final Year Project where we created this AI which is use to Predict the mood and food based on the Prompt provided.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="ripple-img2">
+            <img class="ripple-img2" src="ans.png" alt="Aptitude & Code Solver Using Image">
+          </div>
+          <div class="project-body">
+            <h3>Aptitude & Code Solver <a href="https://ai-solver-app.vercel.app/">{ Link }</a></h3>
+            <p class="muted">MERN · transformerjs · Image Analysis</p>
+            <p>It is a site created to provide answers of coding quizes and aptitude quizes with good accuracy by uploading Images.</p>
+          </div>
+        </article>
+
+         <article class="project-card">
+          <div class="ripple-img2">
+            <img class="ripple-img2" src="mypor.png" alt="Project - Portfolio">
+          </div>
+          <div class="project-body">
+            <h3>My Portfolio <a href="https://singhcod3r.github.io/MyPortfolio/">{ Link }</a></h3>
+            <p class="muted">CSS · FormsTree · Bootstrap </p>
+            <p>This is used to showcase my portfolio Design Skill. I have Created this During my Internship Period as one of my Task.</p>
+          </div>
+        </article>
+      </div>
+      <button id="carouselPrev" class="carousel-nav prev" aria-label="Previous project">‹</button>
+      <button id="carouselNext" class="carousel-nav next" aria-label="Next project">›</button>
+    </div>
+    </div>
+</div>
+
+  <div id="overlayInternship" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="internship">Close ✕</button>
+      <h2>Internship Experience</h2>
+      <p class="muted">Work & achievements.</p>
+      <div id="internTimeline" class="timeline">
+        <div class="tl-item" data-year="2025" data-title="Full Stack Developer Intern" data-sub="Company X" data-desc="Built reusable UI components and optimized performance by 18%">
+          <div class="timeline-node"> </div>
+          <div class="tl-card">
+            <div class="tl-meta">July 2025 - August 2025 · Myna Seva Foundation</div>
+            <h4>Full Stack Developer Intern</h4>
+            <p class="muted">Learned new Tech Skills and optimized the mynaseva.com Website. Also reduced the loading time of this Website. <br> Understood the concept of Trending Vibe Coding and Wordpress. Made Portfolio and Other Designs Using Canva Design and Figma.</p>
+          </div>
+        </div>
+        <div class="tl-item" data-year="2025" data-title="Machine Learning Intern" data-sub="Company Y" data-desc="Implemented features across frontend & backend">
+          <div class="timeline-node"> </div>
+          <div class="tl-card">
+            <div class="tl-meta">June 2025 - July 2025 · Plasmid</div>
+            <h4>Machine Learning Intern</h4>
+            <p class="muted">• Developed a Machine Learning model for fraud detection with an impressive accuracy of 97%, showcasing strong
+problem-solving skills and model optimization expertise. <br>
+• Applied CI/CD concepts in real-world scenarios and deployed machine learning models using automated pipelines.</p>
+          </div>
+        </div>
+        <div class="tl-item" data-year="2023" data-title="Python Intern" data-sub="CR Technology" data-desc="• Completed a 1-month Python Internship focused on practical applications of Python programming.
+• Worked on hands-on tasks involving scripting, data handling, and automation using Python.">
+          <div class="timeline-node"> </div>
+          <div class="tl-card">
+            <div class="tl-meta">September 2023 - October 2023 · CR Technology</div>
+            <h4>Python Intern</h4>
+            <p class="muted">• Completed a 1-month Python Internship focused on practical applications of Python programming. <br>
+• Worked on hands-on tasks involving scripting, data handling, and automation using Python.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlayEducation" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="education">Close ✕</button>
+      <h2>Education</h2>
+      <p class="muted">Academic background.</p>
+      <div id="eduTimeline" class="timeline">
+        <div class="tl-item" data-year="2026" data-title="B.Tech — Computer Science Engineering" data-sub="Shri Ramswaroop Memorial College of Engineering and Management" data-desc="Major projects: MoodBite AI. GPA: 8.4">
+          <div class="timeline-node"> </div>
+          <div class="tl-card">
+            <div class="tl-meta">2026 · Shri Ramswaroop Memorial College of Engineering and Management</div>
+            <h4>B.Tech — Computer Science Engineering</h4>
+            <p class="muted">Major projects - MoodBite AI & GPA - 8.4</p>
+          </div>
+        </div>
+        <div class="tl-item" data-year="2022" data-title="Diploma" data-sub="Government Polytechnic Bhilihili " data-desc="Strong foundation in Leadership & Team Management.">
+          <div class="timeline-node"> </div>
+          <div class="tl-card">
+            <div class="tl-meta">2022 · Government Polytechnic Bhilihili </div>
+            <h4>Diploma - Civil Engineering</h4>
+            <p class="muted">Worked with Team and Understood project Leadership.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlayContact" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="contact">Close ✕</button>
+      <h2>Contact</h2>
+      <p class="muted">Want to work together? Reach out.</p>
+      <form class="contact-form" action="https://formspree.io/f/movlvooe" method="post">
+        <input name="name" placeholder="Your name" aria-label="Your name">
+        <input name="email" type="email" placeholder="Your email" aria-label="Your email">
+        <textarea name="message" rows="5" placeholder="Message" aria-label="Message"></textarea>
+        <div style="margin-top:8px">
+          <button class="btn primary" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="tlModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-inner">
+      <button id="closeTlModal" class="m-close" aria-label="Close">✕</button>
+      <div id="tlModalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
