@@ -123,6 +123,8 @@ function setIndicatorTo(button, instant = false) {
       if (target === 'internship') label = 'Opening Internship…';
       if (target === 'education') label = 'Opening Education…';
       if (target === 'projects') label = 'Opening Projects…';
+      if (target === 'blog') label = 'Opening Blog…';
+      if (target === 'oss') label = 'Accessing GitHub…';
       if (target === 'contact') label = 'Opening Contact…';
 
       await showLoader(label, 700);
@@ -148,10 +150,14 @@ function openSection(name) {
   if (name === 'home') return;
   const overlay = {
     projects: $('#overlayProjects'),
+    blog: $('#overlayBlog'),
+    oss: $('#overlayOSS'),
     internship: $('#overlayInternship'),
     education: $('#overlayEducation'),
     contact: $('#overlayContact')
   }[name];
+
+
 
   if (!overlay) return;
   overlay.classList.add('show');
@@ -164,6 +170,10 @@ function openSection(name) {
   if (name === 'internship') setTimeout(() => revealTimeline('#internTimeline'), 120);
   if (name === 'education') setTimeout(() => revealTimeline('#eduTimeline'), 120);
 }
+
+
+
+
 
 function closeAllOverlays(instant = false) {
   $$('.overlay').forEach(o => {
@@ -261,12 +271,16 @@ let carouselIndex = 0;
 let isCarouselInitialized = false;
 
 function initCarousel() {
-  carousel = $('#projectCarousel');
+  carousel = document.getElementById('projectCarousel');
   if (!carousel) return;
 
-  carouselItems = Array.from(carousel.children);
-  prevButton = $('#carouselPrev');
-  nextButton = $('#carouselNext');
+  // Select project cards
+  carouselItems = Array.from(carousel.querySelectorAll('.project-card'));
+
+  prevButton = document.getElementById('carouselPrev');
+  nextButton = document.getElementById('carouselNext');
+
+  if (!prevButton || !nextButton) return;
 
   prevButton.addEventListener('click', () => {
     carouselIndex--;
@@ -283,18 +297,18 @@ function initCarousel() {
 }
 
 function updateCarousel() {
-  if (!isCarouselInitialized) return;
+  if (!isCarouselInitialized || !carouselItems.length) return;
 
-  if (carouselIndex < 0) carouselIndex = carouselItems.length - 1;
-  if (carouselIndex >= carouselItems.length) carouselIndex = 0;
-
-  const angle = 360 / carouselItems.length;
+  const length = carouselItems.length;
+  const angle = 360 / length;
 
   carouselItems.forEach((item, i) => {
+    // Rotate cards in a circle
     const rotateY = angle * i;
     item.style.transform = `rotateY(${rotateY}deg) translateZ(320px)`;
   });
 
+  // Rotate the container opposite to current index
   const targetRotation = -carouselIndex * angle;
   carousel.style.transform = `translateZ(-320px) rotateY(${targetRotation}deg)`;
 }

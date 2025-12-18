@@ -62,26 +62,48 @@ a {
 }
 
 .loader-inner {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  border: 3px solid transparent;
   border-top-color: var(--accent);
-  animation: spin 0.9s linear infinite;
-  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.08)
+  animation: spin 1.5s linear infinite;
 }
 
-.loader-label {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 13px;
-  margin-left: 12px;
-  opacity: .95
+.loader-inner::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #60a5fa;
+  animation: spin 3s linear infinite;
+}
+
+.loader-inner::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  animation: spin 1.5s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg)
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -160,7 +182,8 @@ a {
 
 .nav-indicator {
   position: absolute;
-  bottom: 8px;
+  bottom: -2px;
+  /* Moved lower as requested */
   height: 3px;
   background: linear-gradient(90deg, var(--accent), #60a5fa);
   border-radius: 6px;
@@ -233,7 +256,23 @@ a {
 .hero-desc {
   color: var(--muted);
   margin-bottom: 14px;
-  max-width: 60ch
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
 }
 
 .cta {
@@ -291,18 +330,25 @@ a {
   transform: translateY(-4px) scale(1.04);
   box-shadow: var(--glow)
 }
-.ripple-img2{
+
+.ripple-img2 {
   display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
 }
+
+/* Ensure modal is above everything */
+.modal {
+  z-index: 1200 !important;
+}
+
 /* OVERLAY */
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 900;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,12 +383,30 @@ a {
   position: absolute;
   right: 16px;
   top: 16px;
-  background: red;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text);
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.2, 1);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+.panel .close:hover {
+  background: rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 0, 0, 0.4);
+  color: #ff8888;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
 }
 
 /* Projects grid */
@@ -350,8 +414,10 @@ a {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Width of the central card */
-  height: 427px; /* Adjust height as needed */
+  max-width: 400px;
+  /* Width of the central card */
+  height: 427px;
+  /* Adjust height as needed */
   margin: 32px auto 0;
   perspective: 1200px;
 }
@@ -370,16 +436,19 @@ a {
   height: 100%;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: #0a0a0c;
+  /* Opaque background to prevent text bleed-through */
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  backface-visibility: hidden; /* Prevents flickering during 3D transform */
+  backface-visibility: hidden;
+  /* Prevents flickering during 3D transform */
 }
 
 .project-thumb img {
   display: block;
   width: 100%;
-  height: 220px; /* Adjust height for the image */
+  height: 220px;
+  /* Adjust height for the image */
   object-fit: cover;
 }
 
@@ -392,7 +461,8 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 100;
+  /* Increased to ensure buttons are above cards */
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text);
@@ -422,6 +492,7 @@ a {
   .carousel-nav.prev {
     left: -22px;
   }
+
   .carousel-nav.next {
     right: -23px;
   }
@@ -553,43 +624,60 @@ a {
 
 /* Hamburger Menu Toggle */
 .menu-toggle {
-    display: none; /* Hidden by default on desktop */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1200; /* Ensure it's above other nav elements */
+  display: none;
+  /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1200;
+  /* Ensure it's above other nav elements */
 }
 
 .menu-toggle .bar {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text);
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Typewriter Cursor Effect */
 #typewriter-text::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-    color: var(--accent);
+  content: '|';
+  animation: blink 0.7s infinite;
+  color: var(--accent);
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 
 /* Small screens */
 @media (max-width: 900px) {
   .root {
-    padding: 80px 14px 40px
+    padding: 80px 14px 40px;
+  }
+
+  .panel {
+    max-height: 90vh;
+    /* Allow more height on mobile overlays */
+    width: 94%;
+    margin: 10px;
+    padding: 16px;
   }
 
   .page-home .container {
@@ -608,7 +696,8 @@ a {
   }
 
   .cta {
-    justify-content: center; /* This centers the buttons when they wrap */
+    justify-content: center;
+    /* This centers the buttons when they wrap */
   }
 
   .timeline {
@@ -629,11 +718,13 @@ a {
 
   /* Mobile Nav Styles */
   .menu-toggle {
-    display: flex; /* Show hamburger on mobile */
+    display: flex;
+    /* Show hamburger on mobile */
   }
 
   .nav-indicator {
-    display: none; /* Hide the indicator on mobile */
+    display: none;
+    /* Hide the indicator on mobile */
   }
 
   .nav-links {
@@ -647,26 +738,33 @@ a {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    transform: translateX(100%); /* Hide it off-screen by default */
+    transform: translateX(100%);
+    /* Hide it off-screen by default */
     transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+    /* Ensure nav links are above other content but below overlay */
   }
 
   .nav-links.open {
-    transform: translateX(0); /* Slide it in */
+    transform: translateX(0);
+    /* Slide it in */
   }
 
   .nav-btn {
-    font-size: 1.5rem; /* Make nav links bigger for mobile */
+    font-size: 1.5rem;
+    /* Make nav links bigger for mobile */
     color: var(--text);
   }
-  
+
   /* Hamburger to "X" animation */
   .menu-toggle.active .bar:nth-child(1) {
     transform: rotate(45deg) translate(7px, 7px);
   }
+
   .menu-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
+
   .menu-toggle.active .bar:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
@@ -683,4 +781,148 @@ a {
     animation: none !important;
     transition: none !important
   }
+}
+
+/* BLOG GRID STYLES */
+.blog-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card.blog-card {
+  position: relative;
+  height: auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-thumb {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.blog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.project-card.blog-card:hover .blog-thumb img {
+  transform: scale(1.08);
+}
+
+.sm-btn {
+  font-size: 0.9rem;
+  padding: 8px 14px;
+}
+
+/* OPEN SOURCE STYLES */
+.oss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.oss-card {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.25s ease;
+  border-left: 3px solid transparent;
+}
+
+.oss-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-4px);
+  border-left-color: #238636;
+  /* GitHub Merged Green */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.oss-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.repo-icon {
+  opacity: 0.6;
+}
+
+.oss-body h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.oss-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.oss-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.pr-num {
+  color: var(--muted);
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge.merged {
+  background: rgba(35, 134, 54, 0.2);
+  color: #3fb950;
+  border: 1px solid rgba(35, 134, 54, 0.4);
 }

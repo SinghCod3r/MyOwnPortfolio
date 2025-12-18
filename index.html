@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-t" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ayush — Dev Portfolio</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="bg" aria-hidden="true">
     <div id="particles" class="particles"></div>
@@ -35,12 +38,14 @@
       <div id="navLinks" class="nav-links" role="menubar" aria-label="Main links">
         <button data-target="home" class="nav-btn">Home</button>
         <button data-target="projects" class="nav-btn">Projects</button>
+        <button data-target="blog" class="nav-btn">Blog</button>
+        <button data-target="oss" class="nav-btn">Open Source</button>
         <button data-target="internship" class="nav-btn">Internship</button>
         <button data-target="education" class="nav-btn">Education</button>
         <button data-target="contact" class="nav-btn">Contact</button>
+        <div id="navIndicator" class="nav-indicator" aria-hidden="true"></div>
       </div>
-
-      <div id="navIndicator" class="nav-indicator" aria-hidden="true"></div>
+    </div>
     </div>
   </nav>
 
@@ -55,8 +60,10 @@
 
         <div class="right">
           <div class="eyebrow">Hi, I am</div>
-          <h1 class="hero-title">Ayush SINGH <span class="accent">— </span><span id="typewriter-text" class="accent"></span></h1>
-          <p class="hero-desc">I build fast, accessible, backend projects. Micro-interactions and clean code are my jam.</p>
+          <h1 class="hero-title">Ayush Singh <span class="accent">— </span><span id="typewriter-text"
+              class="accent"></span></h1>
+          <p class="hero-desc">I build fast, accessible, backend projects. Micro-interactions and clean code are my jam.
+          </p>
 
           <div class="cta">
             <button id="openProjects" class="btn primary">See Projects</button>
@@ -70,7 +77,7 @@
               <img class="ripple-img2" src="icons8-github-50.png" alt="GH">
             </a>
             <a class="social" href="https://linkedin.com/SinghCod3r/" target="_blank" rel="noopener">
-              <img class="ripple-img2"  src="icons8-linkedin-50.png" alt="IN">
+              <img class="ripple-img2" src="icons8-linkedin-50.png" alt="IN">
             </a>
           </div>
         </div>
@@ -78,64 +85,69 @@
     </section>
   </main>
 
-   <div id="overlayProjects" class="overlay" aria-hidden="true">
-  <div class="panel">
-    <button class="close" data-close="projects">Close ✕</button>
-    <h2>Projects</h2>
-    <p class="muted">Checkout My Works with Thier Source Code.</p>
+  <div id="overlayProjects" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="projects">Close ✕</button>
+      <h2>Projects</h2>
+      <p class="muted">Checkout My Works with Their Source Code.</p>
 
-    <div class="carousel-container">
-      <div id="projectCarousel" class="carousel-wrapper">
-        <article class="project-card">
-          <div class="ripple-img2">
-            <img class="ripple-img2" src="1.png" alt="Project - Online Certificate Generator Site">
-          </div>
-          <div class="project-body">
-            <h3>Online Certificate Generator Site <a href="https://online-certificate-generator-etun.onrender.com/">{ Link }</a></h3>
-            <p class="muted">Skills Used - React · Animations</p>
-           
-            <p>This is Created Using Simple ReactJS. It is Used to Generate Online Certificate and Let you download in Image Form or Pdf Formate.</p>
-          </div>
-        </article>
+      <div class="carousel-container">
+        <div id="projectCarousel" class="carousel-wrapper">
+          <article class="project-card">
+            <div class="ripple-img2">
+              <img class="ripple-img2" src="1.png" alt="Project - Online Certificate Generator Site">
+            </div>
+            <div class="project-body">
+              <h3>Online Certificate Generator Site <a href="https://online-certificate-generator-etun.onrender.com/">{
+                  Link }</a></h3>
+              <p class="muted">Skills Used - React · Animations</p>
 
-        <article class="project-card">
-          <div class="ripple-img2">
-            <img class="ripple-img2" src="xyz.png" alt="Project - MoodBite AI ">
-          </div>
-          <div class="project-body">
-            <h3>MoodBite AI <a href="https://mood-bite-version-2-0.vercel.app/">{ Link }</a></h3>
-            <p class="muted">Skills Used - NextJs · SupaBase · Vercel · LLM · Gen AI </p>
-            <p>It is Our Final Year Project where we created this AI which is use to Predict the mood and food based on the Prompt provided.</p>
-          </div>
-        </article>
+              <p>This is Created Using Simple ReactJS. It is Used to Generate Online Certificate and Let you download in
+                Image Form or Pdf Format.</p>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="ripple-img2">
-            <img class="ripple-img2" src="ans.png" alt="Aptitude & Code Solver Using Image">
-          </div>
-          <div class="project-body">
-            <h3>Aptitude & Code Solver <a href="https://ai-solver-app.vercel.app/">{ Link }</a></h3>
-            <p class="muted">MERN · transformerjs · Image Analysis</p>
-            <p>It is a site created to provide answers of coding quizes and aptitude quizes with good accuracy by uploading Images.</p>
-          </div>
-        </article>
+          <article class="project-card">
+            <div class="ripple-img2">
+              <img class="ripple-img2" src="xyz.png" alt="Project - MoodBite AI ">
+            </div>
+            <div class="project-body">
+              <h3>MoodBite AI <a href="https://mood-bite-version-2-0.vercel.app/">{ Link }</a></h3>
+              <p class="muted">Skills Used - NextJs · SupaBase · Vercel · LLM · Gen AI </p>
+              <p>It is Our Final Year Project where we created this AI which is used to Predict the mood and food based
+                on the Prompt provided.</p>
+            </div>
+          </article>
 
-         <article class="project-card">
-          <div class="ripple-img2">
-            <img class="ripple-img2" src="mypor.png" alt="Project - Portfolio">
-          </div>
-          <div class="project-body">
-            <h3>My Portfolio <a href="https://singhcod3r.github.io/MyPortfolio/">{ Link }</a></h3>
-            <p class="muted">CSS · FormsTree · Bootstrap </p>
-            <p>This is used to showcase my portfolio Design Skill. I have Created this During my Internship Period as one of my Task.</p>
-          </div>
-        </article>
+          <article class="project-card">
+            <div class="ripple-img2">
+              <img class="ripple-img2" src="ans.png" alt="Aptitude & Code Solver Using Image">
+            </div>
+            <div class="project-body">
+              <h3>Aptitude & Code Solver <a href="https://ai-solver-app.vercel.app/">{ Link }</a></h3>
+              <p class="muted">MERN · transformerjs · Image Analysis</p>
+              <p>It is a site created to provide answers of coding quizzes and aptitude quizzes with good accuracy by
+                uploading Images.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="ripple-img2">
+              <img class="ripple-img2" src="mypor.png" alt="Project - Portfolio">
+            </div>
+            <div class="project-body">
+              <h3>My Portfolio <a href="https://singhcod3r.github.io/MyPortfolio/">{ Link }</a></h3>
+              <p class="muted">CSS · FormsTree · Bootstrap </p>
+              <p>This is used to showcase my portfolio Design Skill. I have Created this During my Internship Period as
+                one of my Task.</p>
+            </div>
+          </article>
+        </div>
+        <button id="carouselPrev" class="carousel-nav prev" aria-label="Previous project">‹</button>
+        <button id="carouselNext" class="carousel-nav next" aria-label="Next project">›</button>
       </div>
-      <button id="carouselPrev" class="carousel-nav prev" aria-label="Previous project">‹</button>
-      <button id="carouselNext" class="carousel-nav next" aria-label="Next project">›</button>
     </div>
-    </div>
-</div>
+  </div>
 
   <div id="overlayInternship" class="overlay" aria-hidden="true">
     <div class="panel">
@@ -143,22 +155,28 @@
       <h2>Internship Experience</h2>
       <p class="muted">Work & achievements.</p>
       <div id="internTimeline" class="timeline">
-        <div class="tl-item" data-year="2025" data-title="Full Stack Developer Intern" data-sub="Company X" data-desc="Built reusable UI components and optimized performance by 18%">
+        <div class="tl-item" data-year="2025" data-title="Full Stack Developer Intern" data-sub="Company X"
+          data-desc="Built reusable UI components and optimized performance by 18%">
           <div class="timeline-node"> </div>
           <div class="tl-card">
             <div class="tl-meta">July 2025 - August 2025 · Myna Seva Foundation</div>
             <h4>Full Stack Developer Intern</h4>
-            <p class="muted">Learned new Tech Skills and optimized the mynaseva.com Website. Also reduced the loading time of this Website. <br> Understood the concept of Trending Vibe Coding and Wordpress. Made Portfolio and Other Designs Using Canva Design and Figma.</p>
+            <p class="muted">Learned new Tech Skills and optimized the mynaseva.com Website. Also reduced the loading
+              time of this Website. <br> Understood the concept of Trending Vibe Coding and Wordpress. Made Portfolio
+              and Other Designs Using Canva Design and Figma.</p>
           </div>
         </div>
-        <div class="tl-item" data-year="2025" data-title="Machine Learning Intern" data-sub="Company Y" data-desc="Implemented features across frontend & backend">
+        <div class="tl-item" data-year="2025" data-title="Machine Learning Intern" data-sub="Company Y"
+          data-desc="Implemented features across frontend & backend">
           <div class="timeline-node"> </div>
           <div class="tl-card">
             <div class="tl-meta">June 2025 - July 2025 · Plasmid</div>
             <h4>Machine Learning Intern</h4>
-            <p class="muted">• Developed a Machine Learning model for fraud detection with an impressive accuracy of 97%, showcasing strong
-problem-solving skills and model optimization expertise. <br>
-• Applied CI/CD concepts in real-world scenarios and deployed machine learning models using automated pipelines.</p>
+            <p class="muted">• Developed a Machine Learning model for fraud detection with an impressive accuracy of
+              97%, showcasing strong
+              problem-solving skills and model optimization expertise. <br>
+              • Applied CI/CD concepts in real-world scenarios and deployed machine learning models using automated
+              pipelines.</p>
           </div>
         </div>
         <div class="tl-item" data-year="2023" data-title="Python Intern" data-sub="CR Technology" data-desc="• Completed a 1-month Python Internship focused on practical applications of Python programming.
@@ -167,8 +185,9 @@ problem-solving skills and model optimization expertise. <br>
           <div class="tl-card">
             <div class="tl-meta">September 2023 - October 2023 · CR Technology</div>
             <h4>Python Intern</h4>
-            <p class="muted">• Completed a 1-month Python Internship focused on practical applications of Python programming. <br>
-• Worked on hands-on tasks involving scripting, data handling, and automation using Python.</p>
+            <p class="muted">• Completed a 1-month Python Internship focused on practical applications of Python
+              programming. <br>
+              • Worked on hands-on tasks involving scripting, data handling, and automation using Python.</p>
           </div>
         </div>
       </div>
@@ -181,7 +200,9 @@ problem-solving skills and model optimization expertise. <br>
       <h2>Education</h2>
       <p class="muted">Academic background.</p>
       <div id="eduTimeline" class="timeline">
-        <div class="tl-item" data-year="2026" data-title="B.Tech — Computer Science Engineering" data-sub="Shri Ramswaroop Memorial College of Engineering and Management" data-desc="Major projects: MoodBite AI. GPA: 8.4">
+        <div class="tl-item" data-year="2026" data-title="B.Tech — Computer Science Engineering"
+          data-sub="Shri Ramswaroop Memorial College of Engineering and Management"
+          data-desc="Major projects: MoodBite AI. GPA: 8.4">
           <div class="timeline-node"> </div>
           <div class="tl-card">
             <div class="tl-meta">2026 · Shri Ramswaroop Memorial College of Engineering and Management</div>
@@ -189,7 +210,8 @@ problem-solving skills and model optimization expertise. <br>
             <p class="muted">Major projects - MoodBite AI & GPA - 8.4</p>
           </div>
         </div>
-        <div class="tl-item" data-year="2022" data-title="Diploma" data-sub="Government Polytechnic Bhilihili " data-desc="Strong foundation in Leadership & Team Management.">
+        <div class="tl-item" data-year="2022" data-title="Diploma" data-sub="Government Polytechnic Bhilihili "
+          data-desc="Strong foundation in Leadership & Team Management.">
           <div class="timeline-node"> </div>
           <div class="tl-card">
             <div class="tl-meta">2022 · Government Polytechnic Bhilihili </div>
@@ -217,6 +239,266 @@ problem-solving skills and model optimization expertise. <br>
     </div>
   </div>
 
+  <div id="overlayBlog" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="blog">Close ✕</button>
+      <h2>My Blog</h2>
+      <p class="muted">Recent writings and tutorials.</p>
+
+      <div class="blog-grid">
+
+        <article class="project-card blog-card">
+          <div class="blog-thumb ripple-img2">
+            <img src="blog_openprinting.png" alt="OpenPrinting Code Fix" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>My Pull Request to OpenPrinting Got Merged</h3>
+            <p class="muted">3 days ago</p>
+            <p>I contributed to OpenPrinting by fixing the SpliX driver metadata. This ensures better compatibility.</p>
+            <div style="margin-top:12px">
+              <a href="https://singhcod3r.medium.com/my-pull-request-to-openprinting-got-merged-fixing-splix-driver-metadata-23558cb44dfc"
+                target="_blank" class="btn outline sm-btn">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card blog-card">
+          <div class="blog-thumb ripple-img2">
+            <img src="blog_foomatic.png" alt="Foomatic DB Generation" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>My First Merged Pull Request: Foomatic-DB</h3>
+            <p class="muted">3 days ago</p>
+            <p>How I used foomatic-db to generate complete static printer data and learned from open-source reviews.</p>
+            <div style="margin-top:12px">
+              <a href="https://singhcod3r.medium.com/my-first-merged-pull-request-regenerating-printer-data-from-foomatic-db-eba2f7324b34"
+                target="_blank" class="btn outline sm-btn">Read Article</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="overlayOSS" class="overlay" aria-hidden="true">
+    <div class="panel">
+      <button class="close" data-close="oss">Close ✕</button>
+      <h2>Open Source Contributions</h2>
+      <p class="muted">Impactful code merged into major projects.</p>
+
+      <div id="oss-grid" class="oss-grid">
+        <!-- Card 1 -->
+        <a href="https://github.com/medic/cht-docs/pull/1976" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">medic/cht-docs</div>
+          </div>
+          <div class="oss-body">
+            <h3>Docs: Update task priority label to use translation keys</h3>
+            <p class="oss-desc">Updates the `tasks.js` documentation to reflect the correct method for
+              internationalizing task priorities.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#1976</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://github.com/medic/cht-conf/pull/738" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">medic/cht-conf</div>
+          </div>
+          <div class="oss-body">
+            <h3>feat(#561): add form validation for `instance::db-doc-ref`</h3>
+            <p class="oss-desc">Implements the validation rules proposed in issue #561 to ensure that
+              instance::db-doc-ref points to valid database documents.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#738</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="https://github.com/medic/cht-conf/pull/737" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">medic/cht-conf</div>
+          </div>
+          <div class="oss-body">
+            <h3>feat(#512): add form validation for instance::db-doc</h3>
+            <p class="oss-desc">Implements the validation rules proposed in issue #512 to ensure that instance::db-doc
+              is only used correctly.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#737</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="https://github.com/medic/cht-conf/pull/730" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">medic/cht-conf</div>
+          </div>
+          <div class="oss-body">
+            <h3>fix(#390): notify user of new cht-conf versions</h3>
+            <p class="oss-desc">Hi! This PR adds a feature to notify users when a new version of cht-conf is available.
+            </p>
+            <div class="oss-meta">
+              <span class="pr-num">#730</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="https://github.com/OpenPrinting/legacy-drivers/pull/4" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">OpenPrinting/legacy-drivers</div>
+          </div>
+          <div class="oss-body">
+            <h3>Add min12xxw upstream source to legacy-drivers</h3>
+            <p class="oss-desc">This PR adds the min12xxw legacy printer driver to the OpenPrinting legacy-drivers
+              repository.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#4</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="https://github.com/OpenPrinting/foomatic-db/pull/54" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">OpenPrinting/foomatic-db</div>
+          </div>
+          <div class="oss-body">
+            <h3>Update c2050 driver metadata: Fix dead upstream URL</h3>
+            <p class="oss-desc">Updated the source tag in db/source/driver/c2050.xml. Replaced the dead upstream URL.
+            </p>
+            <div class="oss-meta">
+              <span class="pr-num">#54</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="https://github.com/OpenPrinting/foomatic-db/pull/53" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">OpenPrinting/foomatic-db</div>
+          </div>
+          <div class="oss-body">
+            <h3>Update SpliX driver metadata to reflect new OpenPrinting upstream</h3>
+            <p class="oss-desc">This PR updates the metadata in db/source/driver/splix.xml as the original upstream
+              source is no longer active.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#53</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 8 -->
+        <a href="https://github.com/rudra-iitm/foomatic-lookup-site/pull/5" target="_blank" class="oss-card">
+          <div class="oss-header">
+            <div class="repo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM9 9h6M9 12h6M9 15h6" />
+              </svg>
+            </div>
+            <div class="repo-name">rudra-iitm/foomatic-lookup-site</div>
+          </div>
+          <div class="oss-body">
+            <h3>feat: Add script to generate complete data from foomatic-db XML</h3>
+            <p class="oss-desc">Adds the new scripts/generate-from-xml.mjs script to build the complete, up-to-date
+              data.</p>
+            <div class="oss-meta">
+              <span class="pr-num">#5</span>
+              <span class="status-badge merged">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M6 3v18M18 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 0h12" />
+                </svg>
+                Merged
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div id="tlModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-inner">
       <button id="closeTlModal" class="m-close" aria-label="Close">✕</button>
@@ -226,4 +508,5 @@ problem-solving skills and model optimization expertise. <br>
 
   <script src="script.js"></script>
 </body>
+
 </html>
